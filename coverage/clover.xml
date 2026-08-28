@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1787945697810" clover="3.2.0">
+  <project timestamp="1787945697811" name="All files">
+    <metrics statements="31" coveredstatements="28" conditionals="14" coveredconditionals="10" methods="8" coveredmethods="7" elements="53" coveredelements="45" complexity="0" loc="31" ncloc="31" packages="6" files="6" classes="6"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="App.jsx" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/App.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.AdviceButton">
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="AdviceButton.jsx" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/components/AdviceButton/AdviceButton.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.AdviceCard">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="AdviceCard.jsx" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/components/AdviceCard/AdviceCard.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.hooks">
+      <metrics statements="24" coveredstatements="23" conditionals="10" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <file name="useAdvice.js" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/hooks/useAdvice.js">
+        <metrics statements="24" coveredstatements="23" conditionals="10" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="43" count="6" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="53" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="adviceApi.js" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/services/adviceApi.js">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.styles">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="main.scss" path="/Users/pearlamutombo/Documents/W3-week3-adviceGenerator/src/styles/main.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>
