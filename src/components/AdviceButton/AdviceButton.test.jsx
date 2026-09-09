@@ -8,7 +8,9 @@ describe("AdviceButton", () => {
 
     render(<AdviceButton onClick={handleClick} />);
 
-    fireEvent.click(screen.getByRole("button", { name: /get new advice/i }));
+    fireEvent.click(
+      screen.getByRole("button", { name: /get new advice/i }),
+    );
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
