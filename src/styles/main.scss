@@ -1,0 +1,143 @@
+$color-bg: #202733;
+$color-card: #313a49;
+$color-text: #cee3e9;
+$color-accent: #53ffaa;
+$color-muted: #7a8797;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: $color-bg;
+  color: $color-text;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.advice-card {
+  position: relative;
+  width: min(100%, 540px);
+  padding: 48px 48px 72px;
+  text-align: center;
+  background: $color-card;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__number {
+    margin: 0 0 24px;
+    color: $color-accent;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-text;
+    font-size: clamp(24px, 4vw, 28px);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  &__divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: $color-muted;
+    }
+
+    span {
+      width: 5px;
+      height: 16px;
+      border-radius: 2px;
+      background: $color-text;
+
+      &:last-child {
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+.advice-button {
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+  background: $color-accent;
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0 32px rgba(83, 255, 170, 0.65);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-text;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  &__icon {
+    color: $color-card;
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 16px;
+  }
+
+  .advice-card {
+    padding: 40px 24px 64px;
+  }
+
+  .advice-card__text {
+    font-size: 24px;
+  }
+}
