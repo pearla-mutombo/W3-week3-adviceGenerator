@@ -151,7 +151,8 @@ VITE_ADVICE_API_URL=https://api.adviceslip.com
 
 ### Live Deployment
 
-**Netlify URL:** To be added after deployment.
+**Netlify URL:**
+https://benevolent-dango-c28834.netlify.app
 
 ## Project Structure
 
