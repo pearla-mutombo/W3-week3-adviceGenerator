@@ -1,17 +1,28 @@
-$color-bg: #202733;
-$color-card: #313a49;
-$color-text: #cee3e9;
+$color-bg: #0f1720;
+$color-bg-secondary: #17212d;
+$color-card: #202c3a;
+$color-card-light: #263545;
+$color-text: #d9e7ec;
+$color-text-bright: #f4fbfd;
 $color-accent: #53ffaa;
-$color-muted: #7a8797;
+$color-accent-dark: #32d88a;
+$color-muted: #81909e;
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: $color-bg;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(83, 255, 170, 0.08), transparent 35%),
+    linear-gradient(135deg, $color-bg 0%, $color-bg-secondary 100%);
   color: $color-text;
 }
 
@@ -21,20 +32,43 @@ button {
 
 .app {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 40px 24px;
 }
 
 .advice-card {
   position: relative;
-  width: min(100%, 540px);
-  padding: 48px 48px 72px;
+  width: min(100%, 620px);
+  padding: 52px 56px 82px;
   text-align: center;
-  background: $color-card;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  background: linear-gradient(
+    145deg,
+    rgba(38, 53, 69, 0.98),
+    rgba(32, 44, 58, 0.98)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(83, 255, 170, 0.02);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 36px 80px rgba(0, 0, 0, 0.4),
+      0 0 35px rgba(83, 255, 170, 0.06);
+  }
 
   &__content {
     display: flex;
@@ -43,40 +77,48 @@ button {
   }
 
   &__number {
-    margin: 0 0 24px;
+    margin: 0 0 28px;
     color: $color-accent;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 800;
     letter-spacing: 4px;
+    line-height: 1.4;
+    text-transform: uppercase;
   }
 
   &__text {
+    max-width: 510px;
     margin: 0;
-    color: $color-text;
-    font-size: clamp(24px, 4vw, 28px);
+    color: $color-text-bright;
+    font-size: clamp(25px, 4vw, 32px);
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
   }
 
   &__divider {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 32px;
+    gap: 10px;
+    margin-top: 38px;
 
     &::before,
     &::after {
       content: "";
       height: 1px;
       flex: 1;
-      background: $color-muted;
+      background: linear-gradient(90deg, transparent, rgba(129, 144, 158, 0.6));
+    }
+
+    &::after {
+      background: linear-gradient(90deg, rgba(129, 144, 158, 0.6), transparent);
     }
 
     span {
       width: 5px;
-      height: 16px;
-      border-radius: 2px;
+      height: 17px;
+      border-radius: 3px;
       background: $color-text;
 
       &:last-child {
@@ -89,55 +131,207 @@ button {
 .advice-button {
   position: absolute;
   left: 50%;
-  bottom: -28px;
+  bottom: -30px;
   transform: translateX(-50%);
 
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
 
   display: grid;
   place-items: center;
 
-  border: 0;
+  border: 4px solid $color-card;
   border-radius: 50%;
+
   background: $color-accent;
 
+  color: $color-card;
   cursor: pointer;
 
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.3),
+    0 0 0 rgba(83, 255, 170, 0);
+
   transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    background 0.2s ease;
 
   &:hover {
-    box-shadow: 0 0 32px rgba(83, 255, 170, 0.65);
+    background: #72ffb3;
+    transform: translateX(-50%) translateY(-3px);
+
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.35),
+      0 0 30px rgba(83, 255, 170, 0.5);
   }
 
   &:focus-visible {
-    outline: 3px solid $color-text;
-    outline-offset: 4px;
+    outline: 3px solid $color-text-bright;
+    outline-offset: 5px;
   }
 
   &:active {
-    transform: translateX(-50%) scale(0.95);
+    transform: translateX(-50%) scale(0.94);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
   }
 
   &__icon {
     color: $color-card;
-    font-size: 24px;
+    font-size: 25px;
+    font-weight: 800;
     line-height: 1;
   }
 }
 
 @media (max-width: 600px) {
   .app {
-    padding: 16px;
+    padding: 28px 16px;
   }
 
   .advice-card {
-    padding: 40px 24px 64px;
+    width: 100%;
+    padding: 42px 24px 72px;
+    border-radius: 18px;
+
+    &:hover {
+      transform: none;
+    }
+
+    &__number {
+      margin-bottom: 22px;
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    &__text {
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    &__divider {
+      margin-top: 30px;
+    }
   }
 
-  .advice-card__text {
-    font-size: 24px;
+  .advice-button {
+    width: 58px;
+    height: 58px;
+    bottom: -29px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app {
+    padding: 20px 12px;
+  }
+
+  .advice-card {
+    padding: 36px 20px 68px;
+
+    &__text {
+      font-size: 22px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advice-card,
+  .advice-button {
+    transition: none;
+  }
+
+  .advice-card:hover {
+    transform: none;
+  }
+}
+
+.copy-advice-button {
+  margin-top: 28px;
+  padding: 10px 18px;
+
+  border: 1px solid rgba(83, 255, 170, 0.45);
+  border-radius: 8px;
+
+  background: rgba(83, 255, 170, 0.04);
+  color: $color-accent;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 0 rgba(83, 255, 170, 0),
+    inset 0 0 12px rgba(83, 255, 170, 0.03);
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+
+  &:hover:not(:disabled) {
+    color: #8affc5;
+    background: rgba(83, 255, 170, 0.08);
+    border-color: rgba(83, 255, 170, 0.8);
+
+    box-shadow:
+      0 0 18px rgba(83, 255, 170, 0.2),
+      inset 0 0 14px rgba(83, 255, 170, 0.05);
+
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0) scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+}
+// Matrix-inspired neon green "Copied!" give it a pop
+// for the Advice Generator and give it a modern feel
+// still keeping it clean and professional and added
+// the box-shadow and animation and transfrom in different scale %
+.copy-advice-button.copied {
+  color: #0b1f16;
+  background: $color-accent;
+  border-color: $color-accent;
+
+  box-shadow:
+    0 0 12px rgba(83, 255, 170, 0.45),
+    0 0 28px rgba(83, 255, 170, 0.35),
+    inset 0 0 10px rgba(255, 255, 255, 0.12);
+
+  animation: copied-pop 0.35s ease-out;
+}
+
+@keyframes copied-pop {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 rgba(83, 255, 170, 0);
+  }
+
+  60% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
