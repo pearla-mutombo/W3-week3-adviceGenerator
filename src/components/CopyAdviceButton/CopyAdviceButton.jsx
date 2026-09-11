@@ -31,7 +31,7 @@ function CopyAdviceButton({ advice, disabled }) {
   return (
     <button
       type="button"
-      className="copy-advice-button"
+      className={`copy-advice-button ${copied ? "copied" : ""}`}
       onClick={handleCopy}
       disabled={disabled || !advice}
       aria-label="Copy advice">
